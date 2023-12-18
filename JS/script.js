@@ -20,9 +20,14 @@ document.addEventListener('DOMContentLoaded', function(){
     function getSuperHeroList() {
       // Retrieving search input value and trimming whitespaces
       let searchInputTxt = document.getElementById('search-input').value.trim();
-  
+      const requestOptions = {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+       // body: JSON.stringify(this.tutorial)
+    } 
       // Fetching superhero data from Marvel API based on search input
-      fetch(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=94990c30eeadfb944e8ce703f46fb9df&hash=84942db7f1df9d6abda2409a1c16dcf5&nameStartsWith=${searchInputTxt}`)
+      fetch(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=94990c30eeadfb944e8ce703f46fb9df&hash=84942db7f1df9d6abda2409a1c16dcf5&nameStartsWith=${searchInputTxt}`, requestOptions)
         .then(response => response.json())
         .then(data => {
           let html = "";
