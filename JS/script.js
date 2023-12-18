@@ -1,5 +1,4 @@
-// Waiting for the DOM content to be fully loaded before executing JavaScript
-document.addEventListener('DOMContentLoaded', function(){
+
 
     // Retrieving elements from the DOM
     const searchBtn = document.querySelector('.search-btn');
@@ -109,5 +108,4 @@ document.addEventListener('DOMContentLoaded', function(){
       superHeroDetailsContent.parentElement.classList.add('showSuperHero');
     }
   
-  });
-  
+ 
