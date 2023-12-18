@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a,a:hover{
+    text-decoration: none;
+}
+nav{
+    background: #222;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    flex: 1;
+}
+.logo a{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+.logo a:hover{
+    color: #fff;
+}
+.logo img{
+    width: 100px;
+    margin-right: 10px;
+}
+.navdiv{
+    position: absolute;
+    padding: 120px;
+}
+.navdiv a{
+    font-size: 30px;
+    color: #fff;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.navdiv a:hover{
+    color: #ef4b3f;
+}
+.btn{
+    position: relative;
+    background-color: #ef4b3f;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    margin-right: 100px;
+}
+.btn a{
+    font-size: 15px;
+    color: #fff;
+    
+}
+.btn:hover {
+    background-color:#002ead;
+    transition: 0.7s;
+}
+.background img {
+    width: 800px;
+    height: 200px; 
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px; 
+  opacity: 0.7; 
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0px 90px;
+}
+
+#favorites {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.superhero-item {
+    height: 60vh;
+    width: 100%; 
+    text-align: center;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+}
+
+
+.superhero-img img{
+    width: 100%;
+    height: auto;
+}
+.superhero-name{
+    padding: 1.5rem 0.5rem;
+}
+.superhero-name h3{
+    font-size: 1.4rem;
+}
+
+.superhero-btn{
+    text-decoration: none;
+    color: #fff;
+    background: #e84118;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+.superhero-btn:hover{
+    background: #002ead;
+}

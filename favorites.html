@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Include custom CSS file -->
+    <link rel="stylesheet" type="text/css" href="CSS/fav.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+        integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>SuperHero Hunter App</title>
+    <link rel="icon" type="images/favicon" href="/images/favicon.png">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="logo"><a href="#"><img src="images/superhero-logos.jpg"></a></div>
+        <div class="navdiv"><a href="#">SuperHero Hunter</a></div>
+        <!-- Button to go to Home page -->
+        <button class="btn" onclick="openHomePage()"><a href="./index.html">Home</a></button>
+    </nav>
+    <!-- Background image -->
+    <div class="background">
+        <img src="images/bgimage.jpg">
+    </div>
+    <div class="container">
+        <!-- Display section for favorite superheroes -->
+        <div id="favorites">
+            <!-- Placeholder for displaying favorite superheroes -->
+            <!--
+            <div class="superhero-item">
+                <div class="superhero-img">
+                    <img src="images/CaptainAmerica.jpg" alt="superhero">
+                </div>
+                <div class="superhero-name">
+                    <a href="#" class="superhero-info">
+                        <h3>Captain America</h3>
+                    </a>
+                    <a href="#" class="superhero-btn">Add To Favourites</a>
+                </div>
+            </div>
+            -->
+            <!--
+            This commented code represents individual favorite superhero items. It seems like a template for each superhero
+            with their image, name, and an option to add to favorites. This section will be populated dynamically by JavaScript.
+            -->
+        </div>
+    </div>
+    <!-- Include JavaScript files -->
+    <script src="JS/script.js"></script>
+    <script src="JS/favorites.js"></script>
+</body>
+
+</html>
