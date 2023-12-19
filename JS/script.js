@@ -12,43 +12,37 @@ superHeroCloseBtn.addEventListener('click', () =>
   superHeroDetailsContent.parentElement.classList.remove('showSuperHero');
   console.log("close");
 });
-
-// Event listener for search button click to fetch superhero list
 searchBtn.addEventListener('click', getSuperHeroList);
 
 // Function to fetch and display superhero list based on search input
-function getSuperHeroList()
-{
+function getSuperHeroList() {
   // Retrieving search input value and trimming whitespaces
   let searchInputTxt = document.getElementById('search-input').value.trim();
 
   // Fetching superhero data from Marvel API based on search input
   fetch(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=94990c30eeadfb944e8ce703f46fb9df&hash=84942db7f1df9d6abda2409a1c16dcf5&nameStartsWith=${searchInputTxt}`)
     .then(response => response.json())
-    .then(data =>
-    {
+    .then(data => {
       let html = "";
-      if (data.data.results)
-      {
+      if (data.data.results && data.data.results.length > 0) {
         // Generating HTML for each superhero fetched
-        data.data.results.forEach(element =>
-        {
+        data.data.results.forEach(element => {
           html += `
-                <div class="superhero-item" data-id="${element.id}">
-                  <div class="superhero-img">
-                    <img src="${element.thumbnail["path"] + "." + element.thumbnail["extension"]}" alt="superhero"/>
-                  </div>
-                  <div class="superhero-name">
-                    <a href="#" class="superhero-info">
-                      ${element.name}
-                    </a>
-                    <a href="#" class="superhero-btn">Add To Favourites</a>
-                  </div>
-                </div>`;
+            <div class="superhero-item" data-id="${element.id}">
+              <div class="superhero-img">
+                <img src="${element.thumbnail["path"] + "." + element.thumbnail["extension"]}" alt="superhero"/>
+              </div>
+              <div class="superhero-name">
+                <a href="#" class="superhero-info">
+                  ${element.name}
+                </a>
+                <a href="#" class="superhero-btn">Add To Favourites</a>
+              </div>
+            </div>`;
         });
         superHeroList.classList.remove('notFound');
-      } else
-      {
+      } else {
+        // No superhero found, display not found message
         html = "Sorry, we didn't find any superhero!";
         superHeroList.classList.add('notFound');
       }
@@ -56,6 +50,10 @@ function getSuperHeroList()
       // Displaying generated HTML in the superhero list container
       superHeroList.innerHTML = html;
     })
+    .catch(error => {
+      console.error('Error fetching superhero data:', error);
+      // Handle error, e.g., display an error message to the user
+    });
 }
 
 // Event listener for clicking on superhero items to fetch detailed information
